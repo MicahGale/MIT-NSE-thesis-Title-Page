@@ -1,4 +1,4 @@
-# MIT-NSE-thesis-Title-Page
+# MIT NSE Thesis Title Page
 The Latex template for the undergraduate thesis title page the MIT department of Nuclear Science and Engineering.
 
 First of all congratulations on making it this far. You have survived 22.09, 22.05, 22.02, and many other grueling classes, which is awesome. Good for you. Pat yourself on the back. Now all you have to do is pass a few more classes and finish your thesis you will have a Bachelor's of Science from the Massachusetts Insitute of Technology in Nuclear Science and Engineering. So now let's get you through that final step. 
