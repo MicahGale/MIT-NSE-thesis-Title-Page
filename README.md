@@ -23,12 +23,12 @@ There a series of commands that need to be updated that look like the one above.
 * gradMoth: The Month you will be graduating. Your options are February, June, or September
 * gradYear: The year you graduate, yes you need to know this.
 * signDate: The date you actually sat down with your advisor and signed the official copy.
-* advisorName: Your thesis advisor's name. It should include Prof or Dr. That's not their name.
+* advisorName: Your thesis advisor's name. It shouldn't include Prof or Dr. That's not their name.
 * advisorTitle: The official title of your thesis advisor. You can look it up here: http://catalog.mit.edu/schools/engineering/nuclear-science-engineering/#facultystafftext
 * ugChairName: Name of the Department's chair for Undergrad Education. Probably: Michael Short
 * ugChairTitle: The title for the UG chair from the catalog above. 
 * ugChairChair: The title for the UG chair saying their the UG chair e.g. Chairman, NSE Committee for Undergraduate Students
-* copyStatement: This gets into the copyright statement of your thesis. Read below just uncomment which ever one applies to you.
+* copyStatement: This gets into the copyright statement of your thesis. Read below and just uncomment which ever one applies to you.
 * abstractart: Your thesis abstract!
 
 ## Who owns the copyright to your thesis?
