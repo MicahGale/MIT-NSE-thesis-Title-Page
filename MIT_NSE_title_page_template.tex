@@ -2,9 +2,16 @@
 %
 %
 %document header; you don't need to mess with this, unless you know what you're doing
-\documentclass{article}
+\documentclass[twoside]{article}
+\usepackage{afterpage} %needed for blankpage
 \usepackage[letterpaper, margin=1in]{geometry}
 \usepackage{textcomp} %added to make the copyright symbol look a little prettier; comment out to see the difference!
+
+\newcommand\blankpage{ %adds a blankpage after the title and abstract page. Makes these pages one-sided
+    \null
+    \thispagestyle{empty}
+    \newpage}
+
 %
 %
 %%%%%%%%%%%%%%%%%%%%Important reads for Latex Theses%%%%%%%%%%%%%%%%%%%%
@@ -40,10 +47,10 @@
 %These are the document variables this is all you need to edit to update this
 %
 %the thesis title. Replace the text in the second set of {}
-\newcommand{\thesis}{Making foo do bar in order to science}
+\newcommand{\thesis}{Developing Modern Graphite Exponential Pile Experiments to Augment Reactor Physics Education}
 %
 %Not me; you! The thesis author
-\newcommand{\me}{Foo Bar}
+\newcommand{\me}{Micah D. Gale}
 %
 %when you get your diploma yo
 \newcommand{\gradMonth}{JUNE}%only JUNE, SEPTEMBER, or FEBRUARY
@@ -53,8 +60,8 @@
 \newcommand{\signDate}{May 18, 2018}
 %
 %Your thesis advisor's name and title. See above links for help finding your prof's title.
-\newcommand{\advisorName}{Foo Bar}
-\newcommand{\advisorTitle}{Foo Professor of Bar of Nuclear Engineering}
+\newcommand{\advisorName}{Kord Smith}
+\newcommand{\advisorTitle}{Korea Electric Power Company (KEPCO) Professor of the Practice of Nuclear Engineering}
 %
 %The Undegraduate committee chair to whom you submit this (most likely Prof. Short). 
 %double check on his title. This title was accurate in 2017.
@@ -65,13 +72,13 @@
 %The text of your abstract. 
 %
 %
-%%%%%%%%%%%%%%%%%Important copyright information%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%Import copyright information%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %
 % Either you or MIT owns the copyright. If in doubt ask the Technology Licensing Office
 %This might help: <https://libraries.mit.edu/archives/thesis-specs/#copyright>
 %
-%If you had a UROP as part of your thesis work MIT most likely owns the copyright on your thesis
+%If you had a UROP has part of your thesis MIT most likely owns the copyright on your thesis
 %
 %If you own the copyright Uncommnet this part
 %%
@@ -83,7 +90,7 @@
 \newcommand{\copyStatement}{{\textcopyright \ \gradYear \ Massachusetts Institute of Technology. All rights reserved.}}
 
 \newcommand{\abstractart}{   
-    Abstract....words....words...words...and...more...words
+    Reactor Physics is not always an intuitive subject for students to understand. When nuclear engineering was beginning as a field it was common for students to complete measurements on sub-critical reactors, which could not sustain a fission chain reaction, in order to develop a physical intuition. The Massachusetts Institute of Technology has one such reactor, a graphite exponential pile, which was previously unused for possibly decades. In this thesis the MIT Graphite Exponential Pile was returned to experimental operation, and a prototypic student experiment was completed. The material buckling was found by indium foil activations completed with a plutonium-beryllium source. From this it was calculated the pile would have to be a cube with sides that are 5.42m long to become a critical reactor. This proof of concept makes it possible for mens et manus based education at MIT for reactor physics.
     }
 %
 %
@@ -106,7 +113,8 @@
 %
 % 
 \begin{document}
-
+\setcounter{page}{1} %forces page numbers to start on page 1
+%\pagestyle{empty}
 \begin{titlepage}
     \begin{center}
     {\Large{\thesis}}
@@ -170,9 +178,11 @@
     \end{flushright}
     
 \end{titlepage}
-
+\blankpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Abstract page%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \begin{titlepage}
+\setcounter{page}{3} 
     \begin{center}
     {\large{\thesis}}
     
@@ -199,6 +209,6 @@
     \end{flushleft}
     
 \end{titlepage}
-
+\blankpage
 \end{document}
 %\end{MIT}
