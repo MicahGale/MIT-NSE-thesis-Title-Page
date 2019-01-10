@@ -8,6 +8,7 @@ First of all congratulations on making it this far. You have survived 22.09, 22.
 ## Using this package 
 
 You can include the package by using: 
+
     \usepackage{nseTitle}
 
 The options are: `normal` or `upper`. These options change if chunks of the title page are in all upper-case or just use normal capitalization. The default is to use `upper`. If you want to use
