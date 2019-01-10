@@ -1,0 +1,59 @@
+\documentclass[12pt,twoside]{report}
+
+%sets the page and margin sizes
+\usepackage[letterpaper, margin=1in]{geometry}
+% the actual package made in this repository options are
+% normal- Use normal capitalization on the title page
+% upper - put most of the title page in all Upper cases
+\usepackage{nseTitle}
+$$%Filler text
+\usepackage{lipsum}  
+
+%Defines the Author's name
+\author{John Doe}
+
+%The thesis Title
+\title{Using Science to answer more Science Questions}
+
+%Your graduation month: can be: June, September or February
+\gradMonth{June}
+%The year you graduated
+\gradYear{2018}
+
+%The date you signed, and turned in the thesis
+\date{May 18, 2018}
+%Your Advisor's Name
+\advisorName{Jain Doe}
+%Your Advisor's title look up:
+% <http://catalog.mit.edu/schools/engineering/nuclear-science-engineering/#facultystafftext>
+\advisorTitle{Associate Professor of Nuclear Engineer}
+
+%The name of the Faculty chair for the undergraduate committee
+\ChairName{Michael Short}
+
+%The Title of the chair
+\ChairTitle{Assistant Professor of Nuclear Science and Engineering}
+
+
+%%%%%%%%%%%%%%%%%Import copyright information%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+% Either you or MIT owns the copyright. If in doubt ask the Technology Licensing Office
+%This might help: <https://libraries.mit.edu/archives/thesis-specs/#copyright>
+%
+%If you had a UROP has part of your thesis MIT most likely owns the copyright on your thesis
+
+%Whether or not you own the thesis
+%Options:
+% true: you owns it
+% false: MIT owns it.
+\iOwn{false}
+
+%The text of your abstract
+\abstract{\lipsum[1-1]}
+\begin{document}
+
+%Makes your title page, abstract page, and the filler pages
+\maketitle
+
+\end{document}
