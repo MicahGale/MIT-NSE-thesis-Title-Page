@@ -26,12 +26,12 @@ There a series of commands that need to be run before you can run `\maketitle`.
 * date: The date you actually sat down with your advisor and signed the official copy.
 * advisorName: Your thesis advisor's name. It shouldn't include Prof or Dr. That's not their name.
 * advisorTitle: The official title of your thesis advisor. You can [look it up here.](http://catalog.mit.edu/schools/engineering/nuclear-science-engineering/#facultystafftext)
-* ugChairName: Name of the Department's chair for Undergrad Education. Probably: Michael Short
-* ugChairTitle: The title for the UG chair from the catalog above. 
+* ChairName: Name of the Department's chair for Undergrad Education. Probably: Michael Short
+* ChairTitle: The title for the UG chair from the catalog above. 
 * copyStatement: This gets into the copyright statement of your thesis. Read below and just uncomment which ever one applies to you.
 * abstract: Your thesis abstract!
 * iOwn: Whether or not you own the thesis. Pass true to this if you own it. Otherwise MIT owns it you can pass false or anything else you like.
-* ugChairChair: The title for the UG chair saying they're the UG chair i.e. Chairman, NSE Committee for Undergraduate Students. Don't do anything with this unless you want to `renewcommand` it.
+* ChairChair: The title for the UG chair saying they're the UG chair i.e. Chairman, NSE Committee for Undergraduate Students. Don't do anything with this unless you want to `renewcommand` it.
 
 ## Who owns the copyright to your thesis?
 Well that's a hard one because lawyers exist. Basically if in doubt ask the Technology Licensing Office. [The library provides  some guidelines that help.](https://libraries.mit.edu/archives/thesis-specs/#copyright). The TL;DR, which isn't legally rigorous is that if you get paid by MIT to do any part of the thesis (e.g. UROP) MIT owns the thesis, otherwise it's yours. If you do own the copyright you have to grant MIT a royalty-free license to freely distribute the thesis. 
