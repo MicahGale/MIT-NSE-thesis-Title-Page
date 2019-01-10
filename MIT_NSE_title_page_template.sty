@@ -1,13 +1,11 @@
-%whaddup bitches congrats on getting that sweet ass thesis finished yo
-%
-%
-%document header; you don't need to mess with this, unless you know what you're doing
-\documentclass[twoside]{article}
-\usepackage{afterpage} %needed for blankpage
-\usepackage[letterpaper, margin=1in]{geometry}
-\usepackage{textcomp} %added to make the copyright symbol look a little prettier; comment out to see the difference!
+\NeedsTeXFormat{LaTeX2e}
 
-\newcommand\blankpage{ %adds a blankpage after the title and abstract page. Makes these pages one-sided
+\ProvidesPackage{nseTitle}[2019/01/10]
+%document header; you don't need to mess with this, unless you know what you're doing
+\RequirePackage{afterpage} %needed for blankpage
+\RequirePackage{textcomp} %added to make the copyright symbol look a little prettier; comment out to see the difference!
+
+\newcommand\@blankpage{ %adds a blankpage after the title and abstract page. Makes these pages one-sided
     \null
     \thispagestyle{empty}
     \newpage}
@@ -47,10 +45,10 @@
 %These are the document variables this is all you need to edit to update this
 %
 %the thesis title. Replace the text in the second set of {}
-\newcommand{\thesis}{Making foo do bar in order to science}
+%\newcommand{\thesis}{Making foo do bar in order to science}
 %
 %Not me; you! The thesis author
-\newcommand{\me}{Foo Bar}
+%\newcommand{\me}{Foo Bar}
 %
 %when you get your diploma yo
 \newcommand{\gradMonth}{JUNE}%only JUNE, SEPTEMBER, or FEBRUARY
@@ -113,102 +111,105 @@
 %
 % 
 \begin{document}
-\setcounter{page}{1} %forces page numbers to start on page 1
-%\pagestyle{empty}
-\begin{titlepage}
-    \begin{center}
-    {\Large{\thesis}}
-    \vfill
-    {by}
-    \vfill
-    {\me}
-    \vfill
-    {SUBMITTED TO THE DEPARTMENT OF NUCLEAR SCIENCE AND ENGINEERING IN PARTIAL FULFILLMENT OF THE REQUIREMENTS FOR THE DEGREE OF}
-    \vfill
-    {BACHELOR OF SCIENCE IN NUCLEAR SCIENCE AND ENGINEERING}
-    \vfill
-    {AT THE}
-    \vfill
-    {MASSACHUSETTS INSTITUTE OF TECHNOLOGY}
-    \vfill
-    {\gradMonth\ \gradYear}
-    \vfill
-	\copyStatement
-    \end{center}
-    
-    \vspace*{\stretch{8}}
-    
-    \begin{flushleft}
-    {Signature of Author:\hrulefill}
-    \end{flushleft}
-    
-    \begin{flushright}
-    {\me }
-    
-    {Department of Nuclear Science and Engineering}
-    
-    {\signDate }
-    \end{flushright}
-    \vfill
+\renewcommand{\maketitle}
+{
+	\setcounter{page}{1} %forces page numbers to start on page 1
+	\begin{titlepage}
+	    \begin{center}
+			    {\Large{\@title}}
+		    \vfil
+			    by
+		    \vfil
+			    \@author
+		    \vfil
+			    \uppercase{submitted to the Department 
+				    of Nuclear Science and Engineering in 
+				    partial fulfillment of the 
+				    requirements for the Degree of}
+		    \vfil
+			   \uppercase{Bachelor of Science in 
+			   	Nuclear Science and Engineering}
+		    \vfil
+			    \UPPERCASE{at the}
+		    \vfil
+			    {Massachusetts Institute of Technology}
+		    \vfil
+		    {\gradMonth\ \gradYear}
+		    \vfil
+			\copyStatement
+	    \end{center}
+	    
+	    \vspace*{\stretch{8}}
+	    
+	    \begin{flushleft}
+		    {Signature of Author:\hrulefill}
+	    \end{flushleft}
+	    
+	    \begin{flushright}
+		    \@author\\ 
+		    Department of Nuclear Science and Engineering\\
+		    \signDate 
+	    \end{flushright}
+	    \vfil
 
-    \begin{flushleft}
-    {Certified by:\hrulefill}
-    \end{flushleft}
-    
-    \begin{flushright}
-    {\advisorName}
-    
-    {\advisorTitle}
-    
-    {Thesis Supervisor}
-    
-    \end{flushright}
-    \vfill
+	    \begin{flushleft}
+		    Certified by:\hrulefill
+	    \end{flushleft}
+	    
+	    \begin{flushright}
+		    \advisorName\\
+		    \advisorTitle
+		    Thesis Supervisor\\
+	    \end{flushright}
+	    \vfil
 
-\begin{flushleft}
-    {Accepted by:\hrulefill}
-    \end{flushleft}
-    
-    \begin{flushright}
-	{\ugChairName}
-	
-	{\ugChairTitle}
-	
-	{\ugChairChair}
-    \end{flushright}
-    
-\end{titlepage}
-\blankpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Abstract page%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-\begin{titlepage}
-\setcounter{page}{3} 
-    \begin{center}
-    {\large{\thesis}}
-    
-    \bigskip
-    {by}
-    
-    \bigskip
-    {\me}
-    
-    \bigskip
-    {\parbox{3.7in}{\centering Submitted to the Department of Nuclear Science and Engineering on {\signDate}\ in Partial Fulfillment of the Requirements for the Degree of Bachelor of Science in Nuclear Science and Engineering}}
-    \end{center}
-    \bigskip
-    
-    \begin{flushleft}
-    ABSTRACT
-    
-    \bigskip
-    \abstractart
-    \vfill
-    {Thesis Supervisor: \advisorName}
-    
-    {Title: \advisorTitle}
-    \end{flushleft}
-    
-\end{titlepage}
-\blankpage
-\end{document}
+	    \begin{flushleft}
+		    Accepted by:\hrulefill
+	    \end{flushleft}
+	    
+	    \begin{flushright}
+		\ugChairName\\
+		\ugChairTitle\\
+		\ugChairChair\\
+	    \end{flushright}
+	    
+	\end{titlepage}
+	\@blankpage
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Abstract page%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%\newpage
+	\begin{titlepage}
+	\setcounter{page}{3} 
+	    \begin{center}
+		    \large{\thesis}
+		    
+		    \bigskip
+		    by
+		    
+		    \bigskip
+		    \me
+		    
+		    \bigskip
+		    %TODO ?
+		    \parbox{3.7in}{\centeringSubmitted to the Department 
+		    	of Nuclear Science and Engineering on
+			{\signDate}\ in Partial Fulfillment of the 
+			Requirements for the Degree of Bachelor of 
+			Science in Nuclear Science and Engineering}
+	    \end{center}
+	    \bigskip
+	    
+	    \begin{flushleft}
+		    \uppercase{Abstract}
+		    
+		    \bigskip
+		    \abstractart
+		    \vfil
+		    Thesis Supervisor: \advisorName
+		    
+		    Title: \advisorTitle
+	    \end{flushleft}
+	    
+	\end{titlepage}
+	\blankpage
+}
 %\end{MIT}
